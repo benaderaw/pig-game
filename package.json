@@ -1,0 +1,17 @@
+{
+  "name": "pig-game",
+  "version": "1.0.0",
+  "description": "Pig Game App",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html "
+  },
+  "author": "Biniam Aderaw",
+  "license": "ISC",
+  "dependencies": {
+    "core-js": "^3.29.1"
+  },
+  "devDependencies": {
+    "parcel": "^2.8.3"
+  }
+}
