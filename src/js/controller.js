@@ -7,6 +7,9 @@ const controlDiceRoll = function () {
 
   // ROLL THE DICE AND CHANGE THE IMG
   rollDiceView.changeDiceImg();
+
+  //
+  rollDiceView.addScore();
 };
 
 const init = function () {
@@ -14,5 +17,3 @@ const init = function () {
 };
 
 init();
-
-console.log(Math.floor(0.001));
