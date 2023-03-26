@@ -1,6 +1,5 @@
 import rollDiceView from "./Views/rollDiceView";
 import holdView from "./Views/holdView";
-import View from "./Views/views";
 import newGameView from "./Views/newGameView";
 
 const controlDiceRoll = function () {
@@ -15,7 +14,10 @@ const controlDiceRoll = function () {
 };
 
 const controlHold = function () {
-  holdView.updateCurrentScore();
+  // check if winner
+  if (rollDiceView.ifWinner()) return;
+
+  holdView.renderScore();
   rollDiceView.resetCurrScore();
 };
 

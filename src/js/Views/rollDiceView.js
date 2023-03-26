@@ -4,14 +4,14 @@ import View from "./views";
 class RollDiceView extends View {
   _rollDiceBtn = document.querySelector(".roll-dice-btn");
 
+  // CHECK FOR WINNER
   ifWinner() {
     if (+this._player1Score.textContent >= WINNING_NUMBER) return true;
     if (+this._player2Score.textContent >= WINNING_NUMBER) return true;
   }
 
-  // ADD THE DICE RESULTS
   renderScore() {
-    // CHECK IF YOU TOLL A 1
+    // CHECK IF YOU ROLLED 1
     if (this._rolledNumber === 1) {
       // reset score text content
       this.resetCurrScore();
