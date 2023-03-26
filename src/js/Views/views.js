@@ -10,7 +10,7 @@ export default class View {
   _rightPanel = document.querySelector(".right-panel");
 
   //
-  _rollDice = document.querySelector(".roll-dice");
+  _rollDiceBtn = document.querySelector(".roll-dice-btn");
   _diceImg = document.querySelector(".dice-img");
 
   // PLAYER 1
@@ -22,6 +22,7 @@ export default class View {
   _player2CurrentScore = document.querySelector(".player-2-current-score-text");
 
   // HOLD BUTTON
+  _newGameBtn = document.querySelector(".new-game-btn");
   _holdBtn = document.querySelector(".hold-btn");
 
   _rolledNumber;

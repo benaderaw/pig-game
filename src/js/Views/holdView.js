@@ -31,6 +31,14 @@ class HoldView extends View {
     this.toggleActive();
   }
 
+  // RESET CURRENT SCORE
+  resetCurrScore() {
+    this._player1CurrentScoreSum = 0;
+    this._player1CurrentScore.textContent = "0";
+    this._player2CurrentScoreSum = 0;
+    this._player2CurrentScore.textContent = "0";
+  }
+
   holdBtnHandler(handle) {
     this._holdBtn.addEventListener("click", function (e) {
       e.preventDefault();

@@ -25,7 +25,7 @@ class RollDiceView extends View {
   }
 
   rollDiceHandler(handle) {
-    this._rollDice.addEventListener(
+    this._rollDiceBtn.addEventListener(
       "click",
       function (e) {
         e.preventDefault();
