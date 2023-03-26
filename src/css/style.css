@@ -21,7 +21,7 @@ body {
   height: 100vh;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(to top left, #753682 0%, #bf2e34 100%);
+  background-image: linear-gradient(to top left, #2f8324 0%, #1c729c 100%);
   box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
 }
 
