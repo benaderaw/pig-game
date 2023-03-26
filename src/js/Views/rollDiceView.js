@@ -1,11 +1,12 @@
+import { WINNING_NUMBER } from "../config";
 import View from "./views";
 
 class RollDiceView extends View {
   _rollDiceBtn = document.querySelector(".roll-dice-btn");
 
   ifWinner() {
-    if (+this._player1Score.textContent >= 100) return true;
-    if (+this._player2Score.textContent >= 100) return true;
+    if (+this._player1Score.textContent >= WINNING_NUMBER) return true;
+    if (+this._player2Score.textContent >= WINNING_NUMBER) return true;
   }
 
   // ADD THE DICE RESULTS
