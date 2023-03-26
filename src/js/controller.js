@@ -1,19 +1,23 @@
-import View from "./Views/views";
 import rollDiceView from "./Views/rollDiceView";
+import holdView from "./Views/holdView";
+import View from "./Views/views";
 
 const controlDiceRoll = function () {
-  // GET RANDOM NUMBER
-  rollDiceView.randomNumber();
-
   // ROLL THE DICE AND CHANGE THE IMG
   rollDiceView.changeDiceImg();
 
-  //
-  rollDiceView.addScore();
+  // RENDER
+  rollDiceView.renderScore();
+};
+
+const controlHoldHolder = function () {
+  holdView.updateCurrentScore();
+  rollDiceView.resetScoreSum();
 };
 
 const init = function () {
   rollDiceView.rollDiceHandler(controlDiceRoll);
+  holdView.holdBtnHandler(controlHoldHolder);
 };
 
 init();
