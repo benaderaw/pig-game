@@ -2,7 +2,7 @@
 
 This app game is not responsive, desktop only.
 
-This is ot my original project. While i copied/recreated the game, I did NOT copy the code, all that i did on my own.
+This is not my original project. While i copied/recreated the game, I did NOT copy the code, all that i did on my own.
 Used: HTML, CSS, JAVASCRIPT (corre-js, parcel), Git
 
 Rules of the game:
