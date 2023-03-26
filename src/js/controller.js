@@ -4,6 +4,9 @@ import View from "./Views/views";
 import newGameView from "./Views/newGameView";
 
 const controlDiceRoll = function () {
+  // check if winner
+  if (rollDiceView.ifWinner()) return;
+
   // ROLL THE DICE AND CHANGE THE IMG
   rollDiceView.changeDiceImg();
 
@@ -13,12 +16,13 @@ const controlDiceRoll = function () {
 
 const controlHold = function () {
   holdView.updateCurrentScore();
-  rollDiceView.resetScoreSum();
+  rollDiceView.resetCurrScore();
 };
 
 const controllerNewGame = function () {
   //
-  rollDiceView.resetScoreSum();
+
+  rollDiceView.newGameReset();
   holdView.resetCurrScore();
   newGameView.newGame();
 };

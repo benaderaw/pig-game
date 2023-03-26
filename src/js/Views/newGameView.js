@@ -1,9 +1,13 @@
 import View from "./views";
 
 class NewGameView extends View {
+  _newGameBtn = document.querySelector(".new-game-btn");
+
   //
   newGame() {
-    this.toggleActive();
+    this._leftPanel.classList.add("active");
+    this._rightPanel.classList.remove("active");
+    this.newGameReset();
   }
 
   newGameHandler(handle) {
@@ -19,3 +23,5 @@ class NewGameView extends View {
 }
 
 export default new NewGameView();
+
+// scoreSum and scoreSum.text

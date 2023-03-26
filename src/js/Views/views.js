@@ -9,11 +9,12 @@ export default class View {
   _leftPanel = document.querySelector(".left-panel");
   _rightPanel = document.querySelector(".right-panel");
 
-  //
-  _rollDiceBtn = document.querySelector(".roll-dice-btn");
+  // IMAGE
   _diceImg = document.querySelector(".dice-img");
 
   // PLAYER 1
+  _player1Text = document.querySelector(".player-1-text");
+  _player2Text = document.querySelector(".player-2-text");
   _player1Score = document.querySelector(".player-1-score-text");
   _player1CurrentScore = document.querySelector(".player-1-current-score-text");
 
@@ -21,24 +22,16 @@ export default class View {
   _player2Score = document.querySelector(".player-2-score-text");
   _player2CurrentScore = document.querySelector(".player-2-current-score-text");
 
-  // HOLD BUTTON
-  _newGameBtn = document.querySelector(".new-game-btn");
-  _holdBtn = document.querySelector(".hold-btn");
-
+  //
   _rolledNumber;
-  _scoreSum = 0;
-  _player1CurrentScoreSum = 0;
-  _player2CurrentScoreSum = 0;
-
-  ///////////////////////////////////////////////////////////////
-  ///////////////////////////////////////////////////////////////
-  ///////////////////////////////////////////////////////////////
+  _currScoreSum = 0;
+  _player1ScoreSum = 0;
+  _player2ScoreSum = 0;
 
   // TOGGLE THE ACTIVE PLAYER
   toggleActive() {
     this._leftPanel.classList.toggle("active");
     this._rightPanel.classList.toggle("active");
-    this.reset();
   }
 
   // GET A RANDOM NUMBER BETWEEN 1-6
@@ -61,14 +54,29 @@ export default class View {
   }
   //
   totalScoreSum() {
-    return (this._scoreSum += this._rolledNumber);
+    return (this._currScoreSum += this._rolledNumber);
   }
 
   // RESET
-  reset() {
-    this._scoreSum = 0;
-    this._player1Score.textContent = 0; // reset the score to 0
-    this._player2Score.textContent = 0; // reset the score to 0
+  newGameReset() {
+    this._currScoreSum = 0;
     this._diceImg.src = diceOne;
+    this._diceImg.style.opacity = 1;
+
+    // PLAYER 1 RESET
+    this._player1Score.textContent = 0;
+    this._player1ScoreSum = 0;
+    this._player1CurrentScore.textContent = 0;
+    this._leftPanel.classList.remove("winner");
+    this._player1Text.style.color = "#333";
+
+    // PLAYER 2 RESET
+    this._player2Score.textContent = 0;
+    this._player2ScoreSum = 0;
+    this._player2CurrentScore.textContent = 0; // reset the score to 0
+    this._rightPanel.classList.remove("winner");
+    this._player2Text.style.color = "#333";
   }
 }
+
+// playerScore => playerCurrentScore

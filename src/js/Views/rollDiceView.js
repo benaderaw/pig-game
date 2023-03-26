@@ -1,27 +1,39 @@
 import View from "./views";
 
 class RollDiceView extends View {
+  _rollDiceBtn = document.querySelector(".roll-dice-btn");
+
+  ifWinner() {
+    if (+this._player1Score.textContent >= 100) return true;
+    if (+this._player2Score.textContent >= 100) return true;
+  }
+
   // ADD THE DICE RESULTS
   renderScore() {
     // CHECK IF YOU TOLL A 1
     if (this._rolledNumber === 1) {
+      // reset score text content
+      this.resetCurrScore();
       return this.toggleActive();
     }
 
     // SCORE SUM
     this.totalScoreSum();
 
-    // UPDATE THE SCORE AS YOU ROLL
-    if (this._leftPanel.classList.contains("active"))
-      this._player1Score.textContent = this._scoreSum;
+    // UPDATE THE CURRENT SCORE AS YOU ROLL
+    if (this._leftPanel.classList.contains("active")) {
+      this._player1CurrentScore.textContent = this._currScoreSum;
+    }
 
     if (this._rightPanel.classList.contains("active"))
-      this._player2Score.textContent = this._scoreSum;
+      this._player2CurrentScore.textContent = this._currScoreSum;
   }
 
   //
-  resetScoreSum() {
-    this.reset();
+  resetCurrScore() {
+    this._currScoreSum = 0;
+    this._player1CurrentScore.textContent = 0;
+    this._player2CurrentScore.textContent = 0;
   }
 
   rollDiceHandler(handle) {
